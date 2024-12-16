@@ -1,0 +1,83 @@
+/* Vinyl Animation */
+.vinyl-display {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.vinyl {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: url('../images/vinyl5.jpg') center/cover;
+    animation: rotate 20s linear infinite;
+}
+
+.vinyl::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+        circle at center,
+        rgba(30, 30, 30, 0.4) 0px,
+        rgba(0, 0, 0, 0.5) 1px,
+        rgba(30, 30, 30, 0.4) 2px
+    ),
+    radial-gradient(
+        circle at center,
+        transparent 50%,
+        rgba(0, 0, 0, 0.9) 60%
+    );
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover Effects */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Animations */
+input, textarea {
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    transform: scale(1.01);
+}
+
+/* Button Animations */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.btn:hover::after {
+    transform: translateX(0);
+}
