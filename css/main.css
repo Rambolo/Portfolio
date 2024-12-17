@@ -149,7 +149,7 @@ h2 {
 }
 
 .service-card {
-	background: url('../images/vinyl2.jpeg') center/cover;
+	background: url('../images/vinyl2.JPEG') center/cover;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 12px;
