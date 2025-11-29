@@ -35,39 +35,25 @@
 }
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Hover Effects */
-.service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* Hero Waveform */
+@keyframes pulse {
+    0%, 100% { transform: translateY(0); opacity: 0.9; }
+    50% { transform: translateY(-6px); opacity: 1; }
 }
 
 /* Form Animations */
 input, textarea {
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus, textarea:focus {
-    transform: scale(1.01);
-}
+input:focus, textarea:focus { transform: scale(1.01); }
 
 /* Button Animations */
-.btn {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+.btn { transition: all 0.3s ease; }
 
 .btn::after {
     content: '';
@@ -78,6 +64,4 @@ input:focus, textarea:focus {
     transition: transform 0.3s ease;
 }
 
-.btn:hover::after {
-    transform: translateX(0);
-}
+.btn:hover::after { transform: translateX(0); }
